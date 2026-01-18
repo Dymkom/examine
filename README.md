@@ -10,18 +10,20 @@
 
 ## Install
 
-To install Examine, you will need [just](https://github.com/casey/just), if you're on Pop!\_OS, you can install it with the following command:
+To install Examine, you will need [just](https://github.com/casey/just) and headers for libxkbcommon.
+
+If you're on Pop!\_OS, you can install them with the following command:
 
 ```sh
-sudo apt install just
+sudo apt install just libxkbcommon-dev
 ```
 
-On Fedora (or derivatives), you can install it with the following command:
+For Fedora (or derivatives):
 ```sh
-sudo dnf install just
+sudo dnf install just libxkbcommon-devel
 ```
 
-After you install it, you can run the following commands to build and install your application:
+Once the dependencies are installed, you can run the following commands to build and install the application:
 
 ```sh
 just build-release
