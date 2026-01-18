@@ -6,7 +6,7 @@ use crate::icons;
 use cosmic::app::{Core, Task, context_drawer};
 use cosmic::cosmic_config::{self, CosmicConfigEntry};
 use cosmic::iced::{stream, Subscription, Alignment, Length};
-use cosmic::widget::{self, icon, list_column, menu, nav_bar, row, settings, about::About};
+use cosmic::widget::{self, icon, list_column, menu, nav_bar, row, settings, about::About, RcElementWrapper};
 use cosmic::{theme, Application, ApplicationExt, Apply, Element};
 use etc_os_release::OsRelease;
 use futures_util::SinkExt;
@@ -61,7 +61,7 @@ impl Application for AppModel {
 
         let about = About::default()
             .name(fl!("app-title"))
-            .icon(Self::APP_ID)
+            .icon(icon::from_name(Self::APP_ID))
             .author("Dexter Reed")
             .version(env!("CARGO_PKG_VERSION"))
             .license("GPL-3.0-only")
@@ -155,9 +155,9 @@ impl Application for AppModel {
         (app, Task::batch(tasks))
     }
 
-    fn header_start(&self) -> Vec<Element<Self::Message>> {
+    fn header_start(&self) -> Vec<Element<'_, Self::Message>> {
         let menu_bar = menu::bar(vec![menu::Tree::with_children(
-            menu::root(fl!("view")),
+            RcElementWrapper::new(menu::root(fl!("view")).into()),
             menu::items(
                 &self.key_binds,
                 vec![menu::Item::Button(fl!("about"), Some(icons::get_handle("info-outline-symbolic", 14)), MenuAction::About)],
@@ -171,17 +171,17 @@ impl Application for AppModel {
         Some(&self.nav)
     }
 
-    fn context_drawer(&self) -> Option<context_drawer::ContextDrawer<Self::Message>> {
+    fn context_drawer(&self) -> Option<context_drawer::ContextDrawer<'_, Self::Message>> {
         if !self.core.window.show_context {
             return None;
         }
 
         Some(match self.context_page {
-            ContextPage::About => context_drawer::about(&self.about, Message::LaunchUrl, Message::ToggleContextDrawer),
+            ContextPage::About => context_drawer::about(&self.about, |url| Message::LaunchUrl(url.to_string()), Message::ToggleContextDrawer),
         })
     }
 
-    fn view(&self) -> Element<Self::Message> {
+    fn view(&self) -> Element<'_, Self::Message> {
         let page = self.nav.data::<Page>(self.nav.active());
         let is_flatpak = PathBuf::from("/.flatpak-info").exists();
         let spacing = theme::active().cosmic().spacing;
