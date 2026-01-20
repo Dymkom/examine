@@ -1,11 +1,11 @@
 {
     "id": "io.github.cosmic_utils.Examine",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable",
-        "org.freedesktop.Sdk.Extension.llvm20"
+        "org.freedesktop.Sdk.Extension.llvm21"
     ],
     "command": "examine",
     "finish-args": [
@@ -17,7 +17,7 @@
         "--filesystem=xdg-config/cosmic:ro"
     ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin",
+        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm21/bin",
         "build-args": [
             "--share=network"
         ],
@@ -41,8 +41,8 @@
                     "type": "archive",
                     "strip-components": 0,
                     "dest-filename": "just.tar.gz",
-                    "url": "https://github.com/casey/just/releases/download/1.40.0/just-1.40.0-x86_64-unknown-linux-musl.tar.gz",
-                    "sha256": "181b91d0ceebe8a57723fb648ed2ce1a44d849438ce2e658339df4f8db5f1263",
+                    "url": "https://github.com/casey/just/releases/download/1.46.0/just-1.46.0-x86_64-unknown-linux-musl.tar.gz",
+                    "sha256": "79966e6e353f535ee7d1c6221641bcc8e3381c55b0d0a6dc6e54b34f9db36eaa",
                     "only_arches": [
                         "x86_64"
                     ]
@@ -51,29 +51,11 @@
                     "type": "archive",
                     "strip-components": 0,
                     "dest-filename": "just.tar.gz",
-                    "url": "https://github.com/casey/just/releases/download/1.40.0/just-1.40.0-aarch64-unknown-linux-musl.tar.gz",
-                    "sha256": "049d624255d150f18b0f3a1257a163366b0dc22e16526214773903125145e515",
+                    "url": "https://github.com/casey/just/releases/download/1.46.0/just-1.46.0-aarch64-unknown-linux-musl.tar.gz",
+                    "sha256": "b81970c8247fa64cfb30d2a3da0e487e4253f9f2d01865ed5e7d53cdc7b02188",
                     "only_arches": [
                         "aarch64"
                     ]
-                }
-            ]
-        },
-        {
-            "name": "libusb",
-            "config-opts": [
-                "--disable-static"
-            ],
-            "cleanup": [
-                "/lib/*.la",
-                "/lib/pkgconfig",
-                "/include"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/libusb/libusb/releases/download/v1.0.28/libusb-1.0.28.tar.bz2",
-                    "sha256": "966bb0d231f94a474eaae2e67da5ec844d3527a1f386456394ff432580634b29"
                 }
             ]
         },
@@ -88,8 +70,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gregkh/usbutils.git",
-                    "tag": "v018",
-                    "commit": "cda6883cade6ec67671d0c7de61e70eb992509a9",
+                    "tag": "v019",
+                    "commit": "d0c76b601b4b3ab9b2ab2647d604a8e3cce6d666",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
@@ -115,7 +97,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/pop-os/cosmic-icons.git",
-                    "commit": "0b2aed444daa52c65effbb8e71a8a19b0f2e4cb9"
+                    "commit": "cd30ffd509bb6b289ac5d8ae26e2e30341e9b8cb"
                 }
             ],
             "build-commands": [
