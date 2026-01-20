@@ -1,26 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
+  <!--Created with jdAppStreamEdit 9.2-->
   <id>io.github.cosmic_utils.Examine</id>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0-only</project_license>
-  <project_group>COSMIC</project_group>
+  <name>Examine</name>
+  <summary>View system information</summary>
   <developer id="page.codeberg.sungsphinx">
     <name>Dexter Reed</name>
   </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
   <update_contact>dreed4470@proton.me</update_contact>
-  <url type="homepage">https://github.com/cosmic-utils/examine</url>
-  <url type="bugtracker">https://github.com/cosmic-utils/examine/issues</url>
-  <url type="vcs-browser">https://github.com/cosmic-utils/examine</url>
-  <url type="translate">https://github.com/cosmic-utils/examine/tree/main/i18n</url>
-  <url type="contact">https://sungsphinx.codeberg.page/</url>
-  <url type="contribute">https://github.com/cosmic-utils/examine</url>
-  <name>Examine</name>
-  <summary>View system information</summary>
+  <project_group>COSMIC</project_group>
   <description>
     <p>Examine is an app which gives you easy access to system information without needing to use the terminal, built for the COSMIC™ desktop.</p>
   </description>
-  <launchable type="desktop-id">io.github.cosmic_utils.Examine.desktop</launchable>
-  <icon type="remote" height="256" width="256">https://raw.githubusercontent.com/cosmic-utils/examine/main/res/icons/hicolor/scalable/apps/io.github.cosmic_utils.Examine.svg</icon>
   <screenshots>
     <screenshot type="default">
       <caption>Distribution Page</caption>
@@ -31,28 +24,30 @@
       <image type="source" width="1024" height="656">https://raw.githubusercontent.com/cosmic-utils/examine/refs/heads/main/res/screenshots/usb-devices.png</image>
     </screenshot>
   </screenshots>
-  <branding>
-    <color type="primary" scheme_preference="light">#9cc8d7</color>
-    <color type="primary" scheme_preference="dark">#39697c</color>
-  </branding>
-  <requires>
-    <display_length compare="ge">360</display_length>
-  </requires>
-  <supports>
-    <control>keyboard</control>
-    <control>pointing</control>
-  </supports>
-  <categories>
-    <category>Utility</category>
-    <category>System</category>
-  </categories>
-  <content_rating type="oars-1.1"/>
-  <provides>
-    <id>com.system76.CosmicApplication</id>
-    <binary>examine</binary>
-  </provides>
   <releases>
-    <release version="1.0.0" date="2024-10-08">
+    <release version="2.0.0" date="2026-01-20" type="stable">
+      <url>https://github.com/cosmic-utils/examine/releases/tag/2.0.0</url>
+      <description>
+        <p>Changes with this release:</p>
+        <ul>
+          <li>Added support for clicking on links on the Distribution page</li>
+          <li>Added translations for multiple different languages (see below)</li>
+          <li>App listing/metainfo improvements (by @bragefuglseth)</li>
+          <li>General dependency updates (libcosmic, etc. by @sungsphinx and @edfloreshz)</li>
+        </ul>
+        <p>Translations added (GitHub usernames in parentheses):</p>
+        <ul>
+          <li>Swedish (@bittin)</li>
+          <li>Dutch (@feikedonia)</li>
+          <li>Romanian (@mateipralea)</li>
+          <li>Bulgarian (@twlvnn)</li>
+          <li>Portuguese (@carvalhods)</li>
+        </ul>
+        <p>Thank you to everybody who has contributed to this release, and apologies for the *very long* wait.</p>
+        <p>I plan to work on this app more this year, but I will have to see where life decides to take me :-).</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2024-10-08" type="stable">
       <description>
         <p>Initial release of Examine</p>
         <ul>
@@ -62,4 +57,31 @@
       </description>
     </release>
   </releases>
+  <url type="homepage">https://github.com/cosmic-utils/examine</url>
+  <url type="bugtracker">https://github.com/cosmic-utils/examine/issues</url>
+  <url type="translate">https://github.com/cosmic-utils/examine/tree/main/i18n</url>
+  <url type="contact">https://sungsphinx.codeberg.page/</url>
+  <url type="vcs-browser">https://github.com/cosmic-utils/examine</url>
+  <url type="contribute">https://github.com/cosmic-utils/examine</url>
+  <categories>
+    <category>Utility</category>
+    <category>System</category>
+  </categories>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">io.github.cosmic_utils.Examine.desktop</launchable>
+  <provides>
+    <id>com.system76.CosmicApplication</id>
+    <binary>examine</binary>
+  </provides>
+  <branding>
+    <color type="primary" scheme_preference="light">#9cc8d7</color>
+    <color type="primary" scheme_preference="dark">#39697c</color>
+  </branding>
 </component>
