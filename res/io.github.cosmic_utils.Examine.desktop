@@ -7,3 +7,4 @@ StartupNotify=true
 Icon=io.github.cosmic_utils.Examine
 Categories=Utility;System;
 Keywords=CPU;Processor;Distribution;USB;PCI;Information;System;About;
+Keywords[hu]=CPU;Processzor;Disztribúció;USB;PCI;Információ;Rendszer;Névjegy;
