@@ -4,6 +4,7 @@
   <id>io.github.cosmic_utils.Examine</id>
   <name>Examine</name>
   <summary>View system information</summary>
+  <summary xml:lang="cs">Získejte informace o systému</summary>
   <summary xml:lang="hu">Rendszerinformációk megtekintése</summary>
   <developer id="page.codeberg.sungsphinx">
     <name>Dexter Reed</name>
@@ -14,16 +15,19 @@
   <project_group>COSMIC</project_group>
   <description>
     <p>Examine is an app which gives you easy access to system information without needing to use the terminal, built for the COSMIC™ desktop.</p>
+    <p xml:lang="cs">Examine je aplikace, která vám poskytne jednoduchý přístup k systémovým informacím bez potřeby příkazového řádku, postavená pro prostředí COSMIC™.</p>
     <p xml:lang="hu">Az Examine egy alkalmazás, amely egyszerű hozzáférést biztosít a rendszerinformációkhoz terminál használata nélkül, a COSMIC™ asztali környezetre tervezve.</p>
   </description>
   <screenshots>
     <screenshot type="default">
       <caption>Distribution Page</caption>
+      <caption xml:lang="cs">Stránka Distribuce</caption>
       <caption xml:lang="hu">Disztribúció oldal</caption>
       <image type="source" width="1024" height="656">https://raw.githubusercontent.com/cosmic-utils/examine/refs/heads/main/res/screenshots/distribution.png</image>
     </screenshot>
     <screenshot>
       <caption>USBs Page</caption>
+      <caption xml:lang="cs">Stránka USB zařízení</caption>
       <caption xml:lang="hu">USB-eszközök oldal</caption>
       <image type="source" width="1024" height="656">https://raw.githubusercontent.com/cosmic-utils/examine/refs/heads/main/res/screenshots/usb-devices.png</image>
     </screenshot>
